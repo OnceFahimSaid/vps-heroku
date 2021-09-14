@@ -75,5 +75,8 @@ RUN apt-get update -qqy \
     && apt-get -qqy install --no-install-recommends \
         dbus-x11 xfce4 \
     && apt-get autoclean \
+    && apt install software-properties-common \
+    && add-apt-repository ppa:deluge-team/stable \
+    && apt install deluged deluge-web
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
